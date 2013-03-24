@@ -9,14 +9,13 @@
 // it from being updated in th future.
 
 
-package org.usfirst.frc1768.Nashoba-Robotics2013;
+package com.nashoba.robotics;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
-import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import org.usfirst.frc1768.Nashoba-Robotics2013.commands.*;
-import org.usfirst.frc1768.Nashoba-Robotics2013.subsystems.*;
+import com.nashoba.robotics.commands.*;
+import com.nashoba.robotics.subsystems.*;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -95,6 +94,5 @@ public class Robot extends IterativeRobot {
      * This function called periodically during test mode
      */
     public void testPeriodic() {
-        LiveWindow.run();
     }
 }

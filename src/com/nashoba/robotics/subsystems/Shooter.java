@@ -9,10 +9,10 @@
 // it from being updated in th future.
 
 
-package org.usfirst.frc1768.Nashoba-Robotics2013.subsystems;
+package com.nashoba.robotics.subsystems;
 
-import org.usfirst.frc1768.Nashoba-Robotics2013.RobotMap;
-import org.usfirst.frc1768.Nashoba-Robotics2013.commands.*;
+import com.nashoba.robotics.RobotMap;
+import com.nashoba.robotics.commands.*;
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.can.*;
 

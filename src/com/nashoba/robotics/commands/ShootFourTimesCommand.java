@@ -9,7 +9,7 @@
 // it from being updated in th future.
 
 
-package org.usfirst.frc1768.Nashoba-Robotics2013.commands;
+package com.nashoba.robotics.commands;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**
