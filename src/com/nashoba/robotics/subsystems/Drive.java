@@ -36,4 +36,12 @@ public class Drive extends Subsystem {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
+    public double getGyroAngle()
+    {
+	    return gyro1.getAngle();
+    }
+    public void driveMecanum(float x, float y, float z)
+    {
+	    robotDrive41.mecanumDrive_Cartesian(x, y, z, 0);
+    }
 }

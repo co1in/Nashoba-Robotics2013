@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import com.nashoba.robotics.commands.*;
 import com.nashoba.robotics.subsystems.*;
+import edu.wpi.first.wpilibj.networktables.NetworkTableKeyNotDefined;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -90,8 +91,15 @@ public class Robot extends IterativeRobot
     public void teleopPeriodic() 
     {
         dashboardCounter++;
-        
-        int timesPerSecond = SmartDashboard.getInt("SD Times Per Second");
+	int timesPerSecond = 5;
+        try
+	{
+	    timesPerSecond = SmartDashboard.getInt("SD Times Per Second");
+	}
+	catch(NetworkTableKeyNotDefined e)
+	{
+	    System.out.println("Couldnt find SD Times Per Second Key");
+	}
 	if(timesPerSecond < 0)
 	{
 		timesPerSecond = 1;
@@ -103,11 +111,8 @@ public class Robot extends IterativeRobot
 		SmartDashboard.putBoolean("Pressure Limit Sensor", RobotMap.pneumaticsCompressorDigitalInput1.Get());
 		
 		SmartDashboard.putDouble("Gyro Sensor", Robot.drive.getGyroAngle());
-		SmartDashboard.putDouble("Track Analog Force 1", RobotMap.trackAnalogForce1.GetVoltage());
-		SmartDashboard.putDouble("Track Analog Force 2", RobotMap.trackAnalogForce2.GetVoltage());
-		
-		SmartDashboard.putDouble("Shooter Speed", Robot.shooter.getActualSpeed());
-		SmartDashboard.putDouble("Shooter Speed Dial", Robot.shooter.getActualSpeed());
+		SmartDashboard.putDouble("Track Analog Force 1", RobotMap.trackAnalogForce1.getVoltage());
+		SmartDashboard.putDouble("Track Analog Force 2", RobotMap.trackAnalogForce2.getVoltage());
 		
 		//Subsystems
 		SmartDashboard.putData(Robot.drive);

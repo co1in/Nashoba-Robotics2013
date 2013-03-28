@@ -41,10 +41,10 @@ public class OI
 	bButtonX.whenPressed(new ShooterStopCommand());
 	
 	JoystickButton rBumperButtonX = new JoystickButton(xPad, XPad.kRightBumperButton);
-	rBumperButtonX.whenPressed(new TrackDriveSpeedCommand(0.3));
+	rBumperButtonX.whenPressed(new TrackDriveSpeedCommand(0.3f));
 	
 	JoystickButton lBumperButtonX = new JoystickButton(xPad, XPad.kLeftBumperButton);
-	lBumperButtonX.whenPressed(new TrackDriveSpeedCommand(-0.6));
+	lBumperButtonX.whenPressed(new TrackDriveSpeedCommand(-0.6f));
 	
 	JoystickButton startButtonX = new JoystickButton(xPad, XPad.kStartButton);
 	startButtonX.whenPressed(new CompressorStartCommand());
